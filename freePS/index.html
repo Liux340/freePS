@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<title>QuickToolLab PS | 免费在线图片编辑器</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
+	<meta name="description" content="QuickToolLab PS 是一个运行在浏览器里的在线图片编辑器，支持图层、画笔、滤镜、裁剪、缩放、文字和截图等常用修图功能。" />
+	<meta name="keywords"
+		content="QuickToolLab PS,在线PS,在线图片编辑器,在线修图,图片处理,图层,滤镜,画笔,裁剪,文字,Canvas,HTML5" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0, user-scalable=yes" />
+	<meta name="theme-color" content="#101820" />
+	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+	<!-- <link rel="manifest" href="dist/manifest.json"> -->
+	<!-- Google -->
+
+	<link rel="canonical" href="https://ps.quicktoollab.top">
+	<meta itemprop="name" content="QuickToolLab PS" />
+	<meta itemprop="description" content="浏览器里的轻量在线图片编辑器，打开即可进行修图和设计处理。" />
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="QuickToolLab PS" />
+	<meta name="twitter:description" content="QuickToolLab PS 是一个在线图片编辑、修图和图层处理工具。" />
+	<!-- Facebook, Pinterest -->
+	<meta property="og:title" content="QuickToolLab PS" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://ps.quicktoollab.top" />
+	<meta property="og:description" content="在线修图、图片编辑、图层处理和常用滤镜工具。" />
+	<meta property="og:site_name" content="QuickToolLab" />
+
+	<link rel="stylesheet" href="quicktoollab-brand.css">
+	<script src="dist/bundle.js" async></script>
+	<script src="quicktoollab-brand.js" defer></script>
+
+
+</head>
+
+<body>
+	<div class="qt_boot" id="qt_boot" aria-hidden="true">
+		<div class="qt_boot_mark">QL</div>
+		<div class="qt_boot_text">QuickToolLab PS</div>
+	</div>
+
+	<div class="wrapper">
+
+		<nav aria-label="Main Menu" class="main_menu" id="main_menu"></nav>
+
+		<div class="submenu">
+			<a class="logo qt_logo" href="https://quicktoollab.top" aria-label="QuickToolLab PS">QuickToolLab PS</a>
+			<div class="block attributes" id="action_attributes"></div>
+			<button class="undo_button" id="undo_button" type="button">
+				<span class="sr_only">Undo</span>
+			</button>
+		</div>
+
+		<div class="sidebar_left" id="tools_container"></div>
+
+
+		<div class="middle_area" id="middle_area">
+
+			<canvas class="ruler_left" id="ruler_left"></canvas>
+			<canvas class="ruler_top" id="ruler_top"></canvas>
+
+			<div class="main_wrapper" id="main_wrapper">
+				<div class="canvas_wrapper" id="canvas_wrapper">
+					<div id="mouse"></div>
+					<div class="transparent-grid" id="canvas_minipaint_background"></div>
+					<canvas id="canvas_minipaint">
+						<div class="trn error">
+							Your browser does not support canvas or JavaScript is not enabled.
+						</div>
+					</canvas>
+				</div>
+			</div>
+		</div>
+
+		<div class="sidebar_right">
+			<div class="preview block">
+				<h2 class="trn toggle" data-target="toggle_preview">Preview</h2>
+				<div id="toggle_preview"></div>
+			</div>
+
+			<div class="colors block">
+				<h2 class="trn toggle" data-target="toggle_colors">Colors</h2>
+				<div class="content" id="toggle_colors"></div>
+			</div>
+
+			<div class="block" id="info_base">
+				<h2 class="trn toggle toggle-full" data-target="toggle_info">Information</h2>
+				<div class="content" id="toggle_info"></div>
+			</div>
+
+			<div class="details block" id="details_base">
+				<h2 class="trn toggle toggle-full" data-target="toggle_details">Layer details</h2>
+				<div class="content details-content" id="toggle_details"></div>
+			</div>
+
+			<div class="layers block">
+				<h2 class="trn">Layers</h2>
+				<div class="content" id="layers_base"></div>
+			</div>
+		</div>
+	</div>
+	<div class="mobile_menu">
+		<button class="left_mobile_menu" id="left_mobile_menu_button" type="button">
+			<span class="sr_only">Toggle Menu</span>
+		</button>
+		<button class="right_mobile_menu" id="mobile_menu_button" type="button">
+			<span class="sr_only">Toggle Menu</span>
+		</button>
+	</div>
+	<div class="hidden" id="tmp"></div>
+	<div id="popups"></div>
+</body>
+
+</html>
