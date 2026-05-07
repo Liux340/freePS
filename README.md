@@ -1,16 +1,16 @@
 # QuickToolLab PS
 
-QuickToolLab PS is a browser-based image editor for quick edits, layers, filters, brushes, cropping, text, and common visual adjustments.
+QuickToolLab PS 是一款基于浏览器的图片编辑器，适合进行快速编辑、图层处理、滤镜应用、画笔绘制、裁剪、文字添加以及常见的视觉调整。
 
-It operates directly in the browser. Users can create images, paste from the clipboard, upload from the computer, or use drag and drop. Image editing runs locally in the browser.
+它可以直接在浏览器中运行。用户可以新建图片、从剪贴板粘贴、从本地电脑上传，或通过拖拽导入图片。所有图片编辑操作都在浏览器本地完成。
 
-## Preview
+## 预览
 
-Production domain:
+线上地址：
 
 https://ps.quicktoollab.top
 
-## Browser Support
+## 浏览器支持
 
 - Chrome
 - Firefox
@@ -18,40 +18,40 @@ https://ps.quicktoollab.top
 - Edge
 - Safari
 
-## Deploy
+## 部署
 
-This project is a static site and does not need a build step.
+本项目是静态站点，不需要构建步骤。
 
 ### Cloudflare Pages
 
-- Project name: `quicktoollab-ps`
-- Build command: `exit 0`
-- Build output directory: `.`
-- Custom domain: `ps.quicktoollab.top`
+- 项目名称：`quicktoollab-ps`
+- 构建命令：`exit 0`
+- 构建输出目录：`.`
+- 自定义域名：`ps.quicktoollab.top`
 
-Deploy with Wrangler:
+使用 Wrangler 部署：
 
 ```bash
 npx wrangler pages deploy . --project-name quicktoollab-ps --branch main
 ```
 
-After the first deployment, add `ps.quicktoollab.top` in Cloudflare Pages > Custom domains.
+首次部署完成后，在 Cloudflare Pages > Custom domains 中添加 `ps.quicktoollab.top`。
 
-## QuickToolLab Customization
+## QuickToolLab 定制内容
 
-This deployment has a separate branding layer:
+该部署包含独立的品牌定制层：
 
 - `quicktoollab-brand.css`
 - `quicktoollab-brand.js`
 - `images/quicktoollab-ps.svg`
 - `_headers`
 
-The core editor bundle is kept intact, while the public title, metadata, logo, favicon, loading screen, color treatment, cache behavior, and Cloudflare Pages settings are customized for `QuickToolLab PS`.
+核心编辑器文件保持不变，同时针对 `QuickToolLab PS` 定制了公开标题、元数据、Logo、favicon、加载页、配色处理、缓存行为以及 Cloudflare Pages 设置。
 
-Before publishing, check the upstream project's license and keep any required open-source attribution.
+发布前，请检查上游项目的许可证，并保留所有必要的开源署名信息。
 
-## Thanks
+## 致谢
 
-This customized deployment is based on the open-source browser image editor ecosystem.
+该定制部署基于开源浏览器图片编辑器生态。
 
 https://github.com/viliusle/miniPaint
