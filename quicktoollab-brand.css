@@ -74,12 +74,18 @@ body.qt-ready .qt_boot {
 	border-left: 1px solid var(--qt-border);
 }
 
-.qt_logo,
-.logo {
-	min-width: 154px;
+.submenu .qt_logo,
+.submenu .logo {
+	box-sizing: border-box;
+	width: auto !important;
+	min-width: 188px;
+	height: 42px !important;
+	padding: 5px 14px 5px 48px !important;
 	display: inline-flex !important;
+	flex: 0 0 auto;
 	align-items: center;
-	gap: 8px;
+	position: relative !important;
+	overflow: visible;
 	color: var(--qt-text) !important;
 	font-family: Inter, "Segoe UI", Arial, sans-serif;
 	font-size: 15px !important;
@@ -90,19 +96,31 @@ body.qt-ready .qt_boot {
 	white-space: nowrap;
 }
 
-.qt_logo::before,
-.logo::before {
-	content: "QL";
-	width: 28px;
-	height: 28px;
-	display: inline-grid;
-	place-items: center;
-	flex: 0 0 auto;
-	border-radius: 8px;
-	background: linear-gradient(135deg, #34d399, #38bdf8);
-	color: #08111a;
-	font-size: 12px;
-	font-weight: 900;
+.submenu .qt_logo::before,
+.submenu .logo::before {
+	content: "";
+	width: 34px;
+	height: 34px;
+	position: absolute;
+	left: 8px;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 9px;
+	background: url("images/quicktoollab-ps.svg") no-repeat center center;
+	background-size: contain;
+}
+
+.submenu .qt_logo::after,
+.submenu .logo::after {
+	content: none !important;
+	display: none !important;
+	background: none !important;
+}
+
+.submenu .attributes {
+	width: auto !important;
+	min-width: 0;
+	flex: 1 1 auto;
 }
 
 .block h2,
@@ -131,17 +149,16 @@ input[type="radio"] {
 }
 
 @media (max-width: 720px) {
-	.qt_logo,
-	.logo {
-		min-width: 88px;
+	.submenu .qt_logo,
+	.submenu .logo {
+		width: 52px !important;
+		min-width: 52px;
+		padding: 5px 8px 5px 44px !important;
 		font-size: 0 !important;
 	}
 
-	.qt_logo::after,
-	.logo::after {
-		content: "PS";
-		font-size: 14px;
-		font-weight: 800;
-		color: var(--qt-text);
+	.submenu .qt_logo::after,
+	.submenu .logo::after {
+		content: none !important;
 	}
 }
