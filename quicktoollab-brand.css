@@ -1,0 +1,147 @@
+:root {
+	--qt-panel: #101820;
+	--qt-panel-soft: #17212b;
+	--qt-border: rgba(255, 255, 255, 0.12);
+	--qt-accent: #34d399;
+	--qt-accent-strong: #22c55e;
+	--qt-text: #f8fafc;
+}
+
+html,
+body {
+	background: #0e141b;
+}
+
+.qt_boot {
+	position: fixed;
+	inset: 0;
+	z-index: 99999;
+	display: grid;
+	place-content: center;
+	gap: 14px;
+	background: #0e141b;
+	color: var(--qt-text);
+	font-family: Inter, "Segoe UI", Arial, sans-serif;
+	transition: opacity 220ms ease, visibility 220ms ease;
+}
+
+body.qt-ready .qt_boot {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.qt_boot_mark {
+	width: 64px;
+	height: 64px;
+	display: grid;
+	place-items: center;
+	margin: 0 auto;
+	border-radius: 16px;
+	background: linear-gradient(135deg, #34d399, #38bdf8);
+	color: #08111a;
+	font-size: 24px;
+	font-weight: 800;
+	box-shadow: 0 20px 60px rgba(52, 211, 153, 0.2);
+}
+
+.qt_boot_text {
+	font-size: 18px;
+	font-weight: 700;
+	letter-spacing: 0;
+}
+
+.main_menu,
+.submenu,
+.sidebar_left,
+.sidebar_right {
+	background-color: var(--qt-panel) !important;
+}
+
+.submenu {
+	border-bottom: 1px solid var(--qt-border);
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.main_menu {
+	border-bottom: 1px solid rgba(52, 211, 153, 0.28);
+}
+
+.sidebar_left {
+	border-right: 1px solid var(--qt-border);
+}
+
+.sidebar_right {
+	border-left: 1px solid var(--qt-border);
+}
+
+.qt_logo,
+.logo {
+	min-width: 154px;
+	display: inline-flex !important;
+	align-items: center;
+	gap: 8px;
+	color: var(--qt-text) !important;
+	font-family: Inter, "Segoe UI", Arial, sans-serif;
+	font-size: 15px !important;
+	font-weight: 800 !important;
+	line-height: 1;
+	letter-spacing: 0;
+	text-decoration: none !important;
+	white-space: nowrap;
+}
+
+.qt_logo::before,
+.logo::before {
+	content: "QL";
+	width: 28px;
+	height: 28px;
+	display: inline-grid;
+	place-items: center;
+	flex: 0 0 auto;
+	border-radius: 8px;
+	background: linear-gradient(135deg, #34d399, #38bdf8);
+	color: #08111a;
+	font-size: 12px;
+	font-weight: 900;
+}
+
+.block h2,
+.toggle {
+	letter-spacing: 0;
+}
+
+button:hover,
+.menu_left_container a:hover,
+.menu_left_container button:hover {
+	filter: saturate(1.08);
+}
+
+input[type="range"] {
+	accent-color: var(--qt-accent);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	accent-color: var(--qt-accent-strong);
+}
+
+::selection {
+	background: rgba(52, 211, 153, 0.36);
+	color: #ffffff;
+}
+
+@media (max-width: 720px) {
+	.qt_logo,
+	.logo {
+		min-width: 88px;
+		font-size: 0 !important;
+	}
+
+	.qt_logo::after,
+	.logo::after {
+		content: "PS";
+		font-size: 14px;
+		font-weight: 800;
+		color: var(--qt-text);
+	}
+}
